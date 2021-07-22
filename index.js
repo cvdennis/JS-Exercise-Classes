@@ -42,14 +42,14 @@ class Airplane {
 */
 
 class Person {
-  constructor(attributes) {
-    this.name = attributes.name,
-    this.age = attributes.age,
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
     this.stomach = []
   }
   
   eat(somefood) {
-    if(this.stomach <= 10){
+    if(this.stomach.length < 10){
       this.stomach.push(somefood);
     }
   }
@@ -89,20 +89,22 @@ console.log(caitlyn.toString());
 */
 
 class Car {
-  constructor (attributes){
-    this.model = attributes.model,
-    this.milesPerGallon = attributes.milesPerGallon,
-    this.tank = 0,
+  constructor (model, mpg){
+    this.model = model;
+    this.milesPerGallon = mpg;
+    this.tank = 0;
     this.odometer = 0
   }
 
   fill(gallons){
     this.tank = this.tank + gallons;
   }
-
-
   }
 
+const toyota = new Car({
+  model: 'toyota',
+  milesPerGallon: 20
+});
 
 /*
   TASK 3
